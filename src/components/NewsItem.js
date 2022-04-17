@@ -1,17 +1,17 @@
-import { getByTitle } from '@testing-library/react'
+// import { getByTitle } from '@testing-library/react'
 import React, { Component } from 'react'
 
 export class NewsItem extends Component {
   render() {
-      let {title,description}=this.props;
+      let {title,description,imageurl,newsUrl}=this.props;
     return (
-      <div>
+      <div className="my-3">
           <div className="card" style={{width: "18rem;"}}>
-  <img src="https://sportshub.cbsistatic.com/i/r/2021/10/03/ef51c04f-8bdf-4fda-a99d-9135c07ce11f/thumbnail/1200x675/19beb468ac9dcf14932f7d234e74a1b3/kyler-murray-rams-week-4.jpg%22" className="card-img-top" alt="..."/>
+  <img src={!imageurl?"https://staticg.sportskeeda.com/editor/2022/04/f9b7d-16501870582020-1920.jpg":imageurl} className="card-img-top" alt="..."/>
   <div className="card-body">
     <h5 className="card-title">{title}</h5>
     <p className="card-text">{description}</p>
-    <a href="/" className="btn btn-primary">Go somewhere</a>
+    <a rel="noreferrer" href={newsUrl} target="_blank" className="btn btn-sm btn-dark">Read More</a>
   </div>
 </div>
       </div>
