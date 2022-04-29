@@ -11,7 +11,7 @@ export default class App extends Component {
       
       <>
         <NavBar/>
-        <News/>
+        <News pageSize={5} country="in" category="technology"/>
        
       </>
     
